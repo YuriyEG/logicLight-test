@@ -1,24 +1,10 @@
 import styles from "./Sidebar.module.scss"
-import Tabs from "@mui/material/Tabs"
-import Tab from "@mui/material/Tab"
-import { withStyles } from "@mui/styles"
+import Tabs from "../../shared/ui/Tabs"
 
-const Sidebar = ({ handleChange, value, tags }) => {
+const Sidebar = ({ handleChange, tags, value }) => {
   return (
     <aside className={styles.sidebar}>
-      <Tabs
-        value={value}
-        orientation="vertical"
-        onChange={handleChange}
-        variant="scrollable"
-        scrollButtons={false}
-        aria-label="scrollable prevent tabs example"
-      >
-        <Tab label="Все темы" value="" className={styles.sidebar__tab} />
-        {tags.map(tag => (
-          <Tab label={tag} value={tag} />
-        ))}
-      </Tabs>
+      <Tabs onChange={handleChange} tags={tags} value={value} />
     </aside>
   )
 }

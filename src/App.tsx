@@ -1,4 +1,4 @@
-import "./App.css"
+import "./App.scss"
 import Sidebar from "./widgets/Sidebar"
 import Courses from "./widgets/Courses"
 
@@ -9,8 +9,8 @@ const App = () => {
   const [value, setValue] = useState("")
   const { courses, tags } = useGetCourses()
 
-  const setTagHandler = (_, v: string) => {
-    setValue(v)
+  const setTagHandler = value => {
+    setValue(value)
   }
 
   let coursesList = []
