@@ -6,18 +6,24 @@ import { useState } from "react"
 import useGetCourses from "./hooks/useGetCourses"
 
 const App = () => {
-  const [tag, setTag] = useState(0)
-  const [query, setQuery] = useState(0)
-  const { courses } = useGetCourses(tag)
-  console.log(courses)
+  const [value, setValue] = useState("")
+  const { courses, tags } = useGetCourses()
 
-  const setTagHandler = (_, value) => {
-    setTag(value)
+  const setTagHandler = (_, v: string) => {
+    setValue(v)
   }
+
+  let coursesList = []
+  if (!value) {
+    coursesList = courses
+  } else {
+    coursesList = courses.filter(node => node.tags.includes(value))
+  }
+
   return (
     <div className="App">
-      <Sidebar handleChange={setTagHandler} value={tag} />
-      <Courses courses={courses} />
+      <Sidebar handleChange={setTagHandler} value={value} tags={tags} />
+      <Courses courses={coursesList} />
     </div>
   )
 }

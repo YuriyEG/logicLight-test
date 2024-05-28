@@ -1,17 +1,16 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
-const useGetCourses = tags => {
+const useGetCourses = () => {
   const [courses, setCourses] = useState([])
+  const [tags, setTags] = useState([])
   const [fetching, setFetching] = useState(false)
   const [error, setError] = useState(false)
-  const [fullFilled, setFullfilled] = useState(false)
 
   useEffect(() => {
     setFetching(true)
     setError(false)
-    setFullfilled(false)
-    fetch("https://logiclike.com/docs/courses.json", {
+    fetch(`https://logiclike.com/docs/courses.json`, {
       method: "GET",
     })
       .then(res => {
@@ -22,19 +21,24 @@ const useGetCourses = tags => {
         setCourses(res)
         setFetching(false)
         setError(false)
-        setFullfilled(true)
+
+        let box = []
+        res.forEach(node => {
+          box = [...box, ...node.tags]
+        })
+        const tagList = [...new Set(box)]
+        setTags(tagList)
       })
       .catch(err => {
         setFetching(false)
-        setFullfilled(false)
         setError(true)
       })
-  }, [tags])
+  }, [])
 
   return {
     courses,
+    tags,
     fetching,
-    fullFilled,
     error,
   }
 }

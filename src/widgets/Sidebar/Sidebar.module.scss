@@ -1,8 +1,18 @@
+@font-face {
+  font-family: "Nurito";
+  src: url("../../assets/fonts/Nunito-Medium.ttf");
+}
+
 .sidebar {
   width: 264px;
-  height: 234px;
+  align-self: start;
   border-radius: 18px;
   margin-right: 24px;
   border: 1px solid rgba(207, 207, 228, 1);
   padding: 12px;
+  font-family: Nurito, Arial, Helvetica, sans-serif;
+}
+
+.sidebar__tab {
+  background-color: orange;
 }

@@ -1,8 +1,9 @@
 import styles from "./Sidebar.module.scss"
 import Tabs from "@mui/material/Tabs"
 import Tab from "@mui/material/Tab"
+import { withStyles } from "@mui/styles"
 
-const Sidebar = ({ handleChange, value }) => {
+const Sidebar = ({ handleChange, value, tags }) => {
   return (
     <aside className={styles.sidebar}>
       <Tabs
@@ -13,11 +14,10 @@ const Sidebar = ({ handleChange, value }) => {
         scrollButtons={false}
         aria-label="scrollable prevent tabs example"
       >
-        <Tab label="Все темы" />
-        <Tab label="Логика и мышление" />
-        <Tab label="Загадки" />
-        <Tab label="Головоломки" />
-        <Tab label="Путешествия" />
+        <Tab label="Все темы" value="" className={styles.sidebar__tab} />
+        {tags.map(tag => (
+          <Tab label={tag} value={tag} />
+        ))}
       </Tabs>
     </aside>
   )
