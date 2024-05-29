@@ -1,7 +1,9 @@
 import styles from "./Courses.module.scss"
-import CourseCard from "../../features/CourseCard"
+
 import type { FC } from "react"
 import type { ICoursesComponent } from "./CoursesType"
+
+import CourseCard from "../../features/CourseCard"
 
 const Courses: FC<ICoursesComponent> = ({ courses }) => {
   return (

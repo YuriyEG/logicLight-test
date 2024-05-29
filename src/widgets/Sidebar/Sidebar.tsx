@@ -1,7 +1,9 @@
 import styles from "./Sidebar.module.scss"
-import type { FC } from "react"
-import Tabs from "../../shared/ui/Tabs"
+
 import type { ISidebarComponent } from "./SidebarType"
+import type { FC } from "react"
+
+import Tabs from "../../shared/ui/Tabs"
 
 const Sidebar: FC<ISidebarComponent> = ({ handleChange, tags, value }) => {
   return (

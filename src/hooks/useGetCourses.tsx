@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { useEffect } from "react"
 
 import type { ICourse } from "../types/api"
-import { useEffect } from "react"
+
 const useGetCourses = () => {
   const [courses, setCourses] = useState<ICourse[]>([])
   const [tags, setTags] = useState<string[]>([])

@@ -1,4 +1,5 @@
 import styles from "./Tabs.module.scss"
+
 import type { FC } from "react"
 import type { ITabsComponent } from "./TabsType"
 

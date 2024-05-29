@@ -1,4 +1,5 @@
 import styles from "./CourseCard.module.scss"
+
 import type { FC } from "react"
 import type { ICourseCardComponent } from "./CourseCardType"
 
