@@ -1,6 +1,8 @@
 import styles from "./CourseCard.module.scss"
+import type { FC } from "react"
+import type { ICourseCardComponent } from "./CourseCardType"
 
-const CourseCard = ({ course }) => {
+const CourseCard: FC<ICourseCardComponent> = ({ course }) => {
   return (
     <li key={course.id} className={styles.courseCard}>
       <figure className={styles.courseCard__figure}>

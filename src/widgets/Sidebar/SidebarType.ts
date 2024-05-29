@@ -1,5 +1,5 @@
 export interface ISidebarComponent {
-  handleChange: () => void
+  handleChange: (value: string) => void
   tags: string[]
   value: string
 }

@@ -30,7 +30,7 @@ const useGetCourses = () => {
         const tagList = [...new Set(box)]
         setTags(tagList)
       })
-      .catch(err => {
+      .catch(() => {
         setFetching(false)
         setError(true)
       })

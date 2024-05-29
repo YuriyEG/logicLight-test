@@ -1,6 +1,8 @@
 import styles from "./Tabs.module.scss"
+import type { FC } from "react"
+import type { ITabsComponent } from "./TabsType"
 
-const Tabs = ({ onChange, tags, value }) => {
+const Tabs: FC<ITabsComponent> = ({ onChange, tags, value }) => {
   return (
     <div className={styles.tabs} onClick={e => onChange(e.target.id)}>
       <li
