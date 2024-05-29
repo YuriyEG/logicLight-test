@@ -1,4 +1,5 @@
 import styles from "./CourseCard.module.scss"
+
 const CourseCard = ({ course }) => {
   return (
     <li key={course.id} className={styles.courseCard}>

@@ -1,8 +1,9 @@
 import CourseCard from "../../features/CourseCard"
+import type { FC } from "react"
+import type { ICoursesComponent } from "./CoursesType"
 
-import useGetCourses from "../../hooks/useGetCourses"
 import styles from "./Courses.module.scss"
-const Games = ({ courses }) => {
+const Games: FC<ICoursesComponent> = ({ courses }) => {
   return (
     <div className={styles.courses}>
       <ul className={styles.courses__list}>
