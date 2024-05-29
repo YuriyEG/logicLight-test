@@ -1,19 +1,21 @@
 import "./App.scss"
-import Sidebar from "./widgets/Sidebar"
-import Courses from "./widgets/Courses"
+import Courses from "../widgets/Courses"
+import Sidebar from "../widgets/Sidebar"
+
+import useGetCourses from "../hooks/useGetCourses"
+import type { ICourse } from "../types/api"
+import type { FC } from "react"
 
 import { useState } from "react"
-import useGetCourses from "./hooks/useGetCourses"
-
-const App = () => {
+const App: FC = () => {
   const [value, setValue] = useState("")
   const { courses, tags } = useGetCourses()
 
-  const setTagHandler = value => {
+  const setTagHandler: (value: string) => void = value => {
     setValue(value)
   }
 
-  let coursesList = []
+  let coursesList: ICourse[] = []
   if (!value) {
     coursesList = courses
   } else {

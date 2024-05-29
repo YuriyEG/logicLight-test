@@ -1,8 +1,7 @@
-import styles from "./Courses.module.scss"
 import CourseCard from "../../features/CourseCard"
 
 import useGetCourses from "../../hooks/useGetCourses"
-
+import styles from "./Courses.module.scss"
 const Games = ({ courses }) => {
   return (
     <div className={styles.courses}>

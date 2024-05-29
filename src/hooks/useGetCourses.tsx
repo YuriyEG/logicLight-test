@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { useEffect } from "react"
 
+import type { ICourse } from "../types/api"
+import { useEffect } from "react"
 const useGetCourses = () => {
-  const [courses, setCourses] = useState([])
-  const [tags, setTags] = useState([])
+  const [courses, setCourses] = useState<ICourse[]>([])
+  const [tags, setTags] = useState<string[]>([])
   const [fetching, setFetching] = useState(false)
   const [error, setError] = useState(false)
 
@@ -13,16 +14,16 @@ const useGetCourses = () => {
     fetch(`https://logiclike.com/docs/courses.json`, {
       method: "GET",
     })
-      .then(res => {
+      .then((res: Response) => {
         if (!res.ok) throw new Error(res.statusText)
-        return res.json()
+        return res.json() as Promise<ICourse[]>
       })
       .then(res => {
         setCourses(res)
         setFetching(false)
         setError(false)
 
-        let box = []
+        let box: string[] = []
         res.forEach(node => {
           box = [...box, ...node.tags]
         })
