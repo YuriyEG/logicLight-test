@@ -10,7 +10,7 @@ import Tabs from "../../shared/ui/Tabs"
 const Sidebar: FC<ISidebarComponent> = ({ handleChange, tags, value }) => {
   return (
     <aside className={styles.sidebar}>
-      <Tabs tabs={tags}>
+      <Tabs>
         <Tab
           label=""
           title={"Все темы"}
