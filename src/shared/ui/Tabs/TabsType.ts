@@ -1,5 +1,6 @@
+import type { ReactNode } from "react"
+
 export interface ITabsComponent {
-  onChange: (value: string) => void
-  tags: string[]
-  value: string
+  children: ReactNode
+  tabs: string[]
 }
