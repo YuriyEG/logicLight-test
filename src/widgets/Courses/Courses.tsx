@@ -8,7 +8,7 @@ import CourseCard from "../../features/CourseCard"
 const Courses: FC<ICoursesComponent> = ({ courses }) => {
   return (
     <div className={styles.courses}>
-      <ul className={styles.courses__list}>
+      <ul className={styles.list}>
         {courses.map(course => (
           <CourseCard course={course} key={course.id} />
         ))}

@@ -1,6 +1,6 @@
-import "./App.scss"
+import styles from "./App.module.scss"
 
-import type { ICourse } from "../types/api"
+import type { ICourse } from "../types/api.type"
 import type { FC } from "react"
 
 import { useState } from "react"
@@ -25,7 +25,7 @@ const App: FC = () => {
   }
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Sidebar handleChange={setTagHandler} value={value} tags={tags} />
       <Courses courses={coursesList} />
     </div>

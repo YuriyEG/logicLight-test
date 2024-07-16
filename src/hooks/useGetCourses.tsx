@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
-import type { ICourse } from "../types/api"
+import type { ICourse } from "../types/api.type"
 
 const useGetCourses = () => {
   const [courses, setCourses] = useState<ICourse[]>([])
